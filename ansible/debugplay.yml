@@ -1,0 +1,30 @@
+---
+- name: Debuging play
+  hosts: all
+  gather_facts: yes
+  become: yes
+  become_user: root
+  tasks:
+    - name: Debug 1
+      debug:
+        msg: "{{ hostvars[inventory_hostname].ansible_default_ipv4.macaddress}}"
+    - name: Set host mac address
+      set_fact:
+        host_mac_address: "{{ hostvars[inventory_hostname].ansible_default_ipv4.macaddress}}"
+    - name: Set vars 
+      set_fact:
+        kube_ip_address: "{{ mac_mapping[host_mac_address].ip }}"
+        kube_hostname: "{{ mac_mapping[host_mac_address].name }}"
+
+    - name: print vars
+      debug:
+        msg: 
+          - "IP: {{ kube_ip_address }}" 
+          - "Hostname: {{ kube_hostname }}"
+    - name: Set hostname
+      template:
+        dest: /etc/hostname
+        src: ./inventory/templates/hostname.j2
+        group: root
+        owner: root
+        mode: 644

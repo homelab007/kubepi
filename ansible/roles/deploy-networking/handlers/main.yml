@@ -1,0 +1,5 @@
+---
+# handlers file for deploy-networking
+- name: reboot_host
+  command: /sbin/shutdown -r +1
+  ignore_errors: True

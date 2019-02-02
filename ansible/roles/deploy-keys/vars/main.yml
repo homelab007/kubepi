@@ -1,0 +1,3 @@
+---
+# vars file for deploy-keys
+ansible_ssh_pass: raspberry

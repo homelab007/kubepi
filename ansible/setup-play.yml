@@ -1,0 +1,14 @@
+---
+- name: Setup up pi cluster
+  hosts: all
+  gather_facts: no
+  roles: 
+    - { role: deploy-keys, tags: ["pubkey"] }
+    
+
+- name: Deploy networking
+  hosts: all
+  gather_facts: yes
+  roles: 
+    - { role: deploy-networking, become: yes, become_user: root, tags: ["net"] }
+    
