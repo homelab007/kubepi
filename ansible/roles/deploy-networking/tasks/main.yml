@@ -1,8 +1,8 @@
 ---
-- name: Set host mac address
+- name: set host mac address
   set_fact:
     host_mac_address: "{{ hostvars[inventory_hostname].ansible_default_ipv4.macaddress}}"
-- name: Set vars 
+- name: set vars
   set_fact:
     kube_ip_address: "{{ mac_mapping[host_mac_address].ip }}"
     kube_hostname: "{{ mac_mapping[host_mac_address].name }}"
@@ -13,15 +13,37 @@
       - "IP: {{ kube_ip_address }}" 
       - "Hostname: {{ kube_hostname }}"
 
-- name: Set hostname
+# - name: set hostname
+#   template:
+#     dest: /etc/hostname
+#     src: ./inventory/templates/hostname.j2
+#     group: root
+#     owner: root
+#     mode: 644
+#   notify: reboot_host
+
+- name: update hosts file
   template:
-    dest: /etc/hostname
-    src: ./inventory/templates/hostname.j2
-    group: root
+    dest: "{{ item.dest_file }}"
+    src: "{{ item.src_file }}"
     owner: root
+    group: root
     mode: 644
+  loop:
+    - { src_file: './inventory/templates/hosts.j2', dest_file: '/etc/hosts' }
+    - { src_file: './inventory/templates/interfaces.j2', dest_file: '/etc/network/interfaces' }
+    - { src_file: './inventory/templates/hostname.j2', dest_file: '/etc/hostname' }
+    - { src_file: './inventory/templates/resolv.conf.j2', dest_file: '/etc/resolv.conf' }
   notify: reboot_host
 
+
+# - name: deploy interfaces file
+#   template:
+#     dest: /etc/network/interfaces
+#     src: ./inventory/templates/interfaces.j2
+#     owner: root
+#     group: root
+#     mode: 644
 #gather_facts: yes
 #become: yes
 #become_user: root
