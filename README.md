@@ -14,11 +14,11 @@ Once the image is on SD card place file called ssh in to the boot folder. This w
 
 - Find Raspberry Pi IP addresses on your network
 
-    sudo nmap -sF  192.168.0.1/24
+  ```sudo nmap -sF  192.168.0.1/24```
 
 - Update inventory file with Raspberry Pi addresses
 
-- Update mac_mapping in ./inventory/group_vars/all/mac_mapping.yml with Raspberry Pi mac addresses
+- Update mac_mapping in ```./inventory/group_vars/all/mac_mapping.yml``` with Raspberry Pi mac addresses
   - Optionally change hostnames
   - Optionally change IP addresses to match your network range
 
