@@ -2,22 +2,22 @@
 mac_mapping:
   "b8:27:eb:b2:07:cf":
     name: kube1.homelab.com
-    ip: 192.168.0.11
+    ip: 192.168.1.11
   "b8:27:eb:f7:02:2d":
     name: kube2.homelab.com
-    ip: 192.168.0.12
+    ip: 192.168.1.12
   "b8:27:eb:9e:d3:4c":
     name: kube3.homelab.com
-    ip: 192.168.0.13
+    ip: 192.168.1.13
   "b8:27:eb:fa:8f:a8":
     name: kube4.homelab.com
-    ip: 192.168.0.14
+    ip: 192.168.1.14
   "b8:27:eb:cd:1f:e3":
     name: kube5.homelab.com
-    ip: 192.168.0.15
+    ip: 192.168.1.15
   "b8:27:eb:e3:7e:c9":
     name: kube6.homelab.com
-    ip: 192.168.0.16
+    ip: 192.168.1.16
 
 
 # db2						B8:27:EB:B2:07:CF	192.168.0.115/24  (#1)

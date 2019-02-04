@@ -24,7 +24,6 @@ Once the image is on SD card place file called ssh in to the boot folder. This w
 
 - Run play
 
-    cd ansible
-    ansible-playbook setup-play.yml
+  ```cd ansible && ansible-playbook setup-play.yml```
 
 - Update inventory with new ip addresses
