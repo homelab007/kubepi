@@ -6,3 +6,8 @@ ff02::2         ip6-allrouters
 127.0.1.1       raspberrypi
 
 {{ kube_ip_address }} {{ kube_hostname }} {{ kube_hostname.split(".")[0] }}
+
+
+{% for key in kubecluster.hosts %}
+{{key.kube_name}} {{key.kube_ip}} {{key.kube_role}}
+{% endfor %}

@@ -7,20 +7,11 @@
     kube_ip_address: "{{ mac_mapping[host_mac_address].ip }}"
     kube_hostname: "{{ mac_mapping[host_mac_address].name }}"
 
-- name: print vars
+- name: print vars from mac > IP/Hostname mapping
   debug:
     msg: 
       - "IP: {{ kube_ip_address }}" 
       - "Hostname: {{ kube_hostname }}"
-
-# - name: set hostname
-#   template:
-#     dest: /etc/hostname
-#     src: ./inventory/templates/hostname.j2
-#     group: root
-#     owner: root
-#     mode: 644
-#   notify: reboot_host
 
 - name: update hosts file
   template:

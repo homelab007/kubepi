@@ -1,2 +1,25 @@
 pub_key: |
   ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC4pLFC7t44rE17/hEysKsIrlRN9qHPYe270BwbU+ilmxQbhL1IUTunk3SuAlN2gsm6PaiQTegMDdriZ3QFuGhcgz/XJNqJGicdoyNqg3GKZczrXNQXmvY5xBXI2R4mYMIlcHxmsGiU0zJRXXDXP7MZNLJevmzqCY301UYxSLqqyqj13RMN3T8Q+tRkn/+VaV4oi1CBGjtQwtzIkcQ9Ijq1Jo5WmPtiDT0a7kU59R1D3yNu9pb0aOsMvbBSL/noktDtNCC3cSnkKiJDoVIi/i2BFXgVSZM3AUnH8FX7iqOxfvSrrEM4J3dqH7FHialdg2Od9u6GlXhotE/y7xHAQ3Ej pradko@C02M2H7FFD57.group.on
+
+kubecluster:
+  hosts:
+  - 1:
+    kube_name: kube1
+    kube_ip: 192.168.1.11
+    kube_role: master
+  - 2:
+    kube_name: kube2
+    kube_ip: 192.168.1.12
+    kube_role: node
+  - 3:
+    kube_name: kube3
+    kube_ip: 192.168.1.13
+    kube_role: node
+  - 4:
+    kube_name: kube4
+    kube_ip: 192.168.1.14
+    kube_role: node
+  - 5:
+    kube_name: kube5
+    kube_ip: 192.168.1.15
+    kube_role: node
