@@ -4,7 +4,7 @@ mac_mapping:
     name: kube1.homelab.com
     ip: 192.168.1.11
   "b8:27:eb:f7:02:2d":
-    name: kube1.homelab.com
+    name: kube2.homelab.com
     ip: 192.168.1.12
   "b8:27:eb:9e:d3:4c":
     name: kube3.homelab.com
